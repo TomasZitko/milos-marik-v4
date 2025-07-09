@@ -334,14 +334,17 @@
             }
             .nav-list {
                 flex-direction: column;
+                text-align: center;
+                gap: 1.2rem;
             }
             .nav-item {
-                margin: 10px 0;
+                margin: 0;
             }
             .nav-link {
-                font-size: 1.4rem;
+                font-size: 1.6rem;
                 font-weight: 500;
                 font-family: 'Playfair Display', serif;
+                padding: 5px 15px;
             }
             .hamburger {
                 display: block;
@@ -1258,7 +1261,7 @@
         /* Running Text (Marquee) Section - Infinite and Smaller */
         .running-text-section {
             background: var(--hero-white);
-            padding: 40px 0;
+            padding: 20px 0; /* MODIFIED: Reduced padding to make space for taller wrapper */
             overflow: hidden;
             border-top: 1px solid var(--hero-gold-light);
             border-bottom: 1px solid var(--hero-gold-light);
@@ -1267,21 +1270,30 @@
             width: 100vw;
             overflow: hidden;
             position: relative;
-            height: 100px;
+            height: 140px; /* MODIFIED: Increased height for bigger logo */
             display: flex;
             align-items: center;
             justify-content: center;
         }
         .running-logo-img {
             display: block;
-            max-width: 340px; /* Slightly bigger than original 320px, but not as large as 370px */
-            max-height: 100px; /* Slightly bigger, but still safe */
+            max-width: 420px; /* MODIFIED: Bigger logo */
+            max-height: 140px; /* MODIFIED: Bigger logo */
             width: auto;
             height: auto;
             object-fit: contain;
         }
         @media (max-width: 768px) {
-            .running-logo-img { max-width: 190px; max-height: 56px; }
+             .running-text-section {
+                 padding: 24px 0; /* MODIFIED: Adjusted mobile padding */
+             }
+            .running-text-wrapper { 
+                height: 80px; /* MODIFIED: Taller on mobile */
+            }
+            .running-logo-img { 
+                max-width: 280px; /* MODIFIED: Bigger on mobile */
+                max-height: 80px; /* MODIFIED: Bigger on mobile */
+            }
         }
         .running-text {
             display: flex;
@@ -1302,7 +1314,6 @@
             100% { transform: translateX(-50%); }
         }
         @media (max-width: 768px) {
-            .running-text-wrapper { height: 48px; }
             .running-text { font-size: 0.92rem; }
         }
 
@@ -2278,7 +2289,6 @@
             </div>
         </section>
 
-        <!-- BEFORE & AFTER SECTION -->
         <section id="before-after">
             <div class="container">
                 <div class="section-header">
@@ -2289,7 +2299,6 @@
                     Podívejte se na skutečné proměny a pokroky v mobilitě a síle mých klientů. Přetáhněte pro porovnání.
                 </p>
                 <div class="before-after-grid">
-                    <!-- Slider 1 -->
                     <div class="comparison-slider">
                         <img src="https://i.postimg.cc/D0V9ZX8d/Sn-mek-obrazovky-2025-07-08-162753.png" alt="After" class="image-after">
                         <img src="https://i.postimg.cc/PrHGn1Gd/Sn-mek-obrazovky-2025-07-08-162744.png" alt="Before" class="image-before">
@@ -2300,7 +2309,6 @@
                         </div>
                     </div>
 
-                    <!-- Slider 2 -->
                     <div class="comparison-slider">
                         <img src="https://i.postimg.cc/x8KWb1mr/Sn-mek-obrazovky-2025-07-08-162829.png" alt="After" class="image-after">
                         <img src="https://i.postimg.cc/T2g8sC4k/Sn-mek-obrazovky-2025-07-08-162808.png" alt="Before" class="image-before">
@@ -2311,7 +2319,6 @@
                         </div>
                     </div>
 
-                    <!-- Slider 3 -->
                     <div class="comparison-slider">
                         <img src="https://i.postimg.cc/Nfk3sLYm/Sn-mek-obrazovky-2025-07-08-162845.png" alt="After" class="image-after">
                         <img src="https://i.postimg.cc/zGD9V5XM/Sn-mek-obrazovky-2025-07-08-162853.png" alt="Before" class="image-before">
