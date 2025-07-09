@@ -2239,7 +2239,7 @@
                         <div class="process-step-box left animate-on-scroll aos-fade-right" style="transition-delay: 0.4s;">
                             <div class="step-number">5</div>
                             <div class="step-content">
-                                <div class="step-title">Vyhodnocení a Další Rozvoj</div>
+                                <div class="step-title">Vyhodnocení a další rozvoj</div>
                                 <div class="step-desc">Společně zhodnotíme výsledky a nastavíme další kroky pro váš dlouhodobý úspěch.</div>
                             </div>
                         </div>
@@ -2357,7 +2357,8 @@
                             </a>
                         </div>
                     </div>
-                    <form class="contact-form animate-on-scroll aos-fade-left" action="#" method="POST" style="transition-delay: 0.1s;">
+                    <!-- The only change to the form is adding an ID for the script to find it -->
+                    <form id="contact-form" class="contact-form animate-on-scroll aos-fade-left" action="#" method="POST" style="transition-delay: 0.1s;">
                         <div class="form-group">
                             <label for="name">Jméno a příjmení</label>
                             <input type="text" id="name" name="name" required>
@@ -2924,6 +2925,36 @@
                     if (isDragging && e.touches.length > 0) moveSlider(e.touches[0].clientX);
                 });
             });
+        });
+
+        // *** NEW: Contact Form 'mailto' functionality ***
+        document.addEventListener('DOMContentLoaded', () => {
+            const contactForm = document.getElementById('contact-form');
+            if(contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    // 1. Prevent the form from submitting the default way
+                    e.preventDefault();
+
+                    // 2. Get the values from the form fields
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const phone = document.getElementById('phone').value;
+                    const message = document.getElementById('message').value;
+                    
+                    // 3. Define the recipient's email address
+                    const recipientEmail = 'milosmarikosobnitrener@email.cz';
+
+                    // 4. Create the subject and body for the email
+                    const subject = `Zpráva z webu od: ${name}`;
+                    const body = `Jméno: ${name}\nE-mail: ${email}\nTelefon: ${phone}\n\nZpráva:\n${message}`;
+
+                    // 5. Create the 'mailto' link, encoding the subject and body
+                    const mailtoLink = `mailto:${recipientEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                    
+                    // 6. Open the user's default email client
+                    window.location.href = mailtoLink;
+                });
+            }
         });
     </script>
 </body>
